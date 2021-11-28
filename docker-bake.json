@@ -1,0 +1,22 @@
+{
+  "variable": {
+    "PHPERFECT_TAG": {
+      "default": "latest"
+    }
+  },
+  "group": {
+    "default": {
+      "targets": ["app-prod", "app-dev"]
+    }
+  },
+  "target": {
+    "app-prod": {
+      "tags": ["phperfect:${PHPERFECT_TAG}"],
+      "target": "php-prod"
+    },
+    "app-dev": {
+      "tags": ["phperfect-dev:${PHPERFECT_TAG}"],
+      "target": "php-dev"
+    }
+  }
+}

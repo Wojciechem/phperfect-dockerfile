@@ -1,0 +1,15 @@
+{
+    "name": "wojciechem/phperfect-dockerfile",
+    "type": "project",
+    "description": "this is just an example",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wojciechem",
+            "email": "wmiedzybrodzki@outlook.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

@@ -1,0 +1,4 @@
+# see: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+.idea/
+*.cache
+vendor/
