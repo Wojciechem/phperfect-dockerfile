@@ -2,6 +2,18 @@
 Attempt to create the "perfect" dockerfile for php projects.  
 As always, it is _opinionated_ and may be subject to change.
 
+## Work in progress / TODO
+- [x] use build-time cache mount for apt & composer
+- [x] use buildx bake
+  - [x] understand json configuration with variables
+- [ ] create separate github workflows to try different setups
+  - [ ] classic (multistage without build-time cache)
+  - [ ] read [on-github-actions-with-docker-layer-caching](https://evilmartians.com/chronicles/build-images-on-github-actions-with-docker-layer-caching)
+  - [ ] try the experimental [github actions cache](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md).
+  - Hopefully it will address the "problem" of Actions being stateless (no build-time cache or even image cache)
+- [ ] understand and try [registry cache](https://github.com/moby/buildkit/tree/master#registry-push-image-and-cache-separately)
+- [ ] set up something more elaborate on php side (small symfony project?)
+
 ## Building
 
 This project makes use of the 
