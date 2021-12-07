@@ -1,7 +1,7 @@
 {
   "variable": {
     "PHPERFECT_TAG": {
-      "default": "latest"
+      "default": "buildx-latest"
     }
   },
   "group": {
@@ -11,11 +11,11 @@
   },
   "target": {
     "app-prod": {
-      "tags": ["phperfect:${PHPERFECT_TAG}"],
+      "tags": ["ghcr.io/wojciechem/phperfect:${PHPERFECT_TAG}"],
       "target": "php-prod"
     },
     "app-dev": {
-      "tags": ["phperfect-dev:${PHPERFECT_TAG}"],
+      "tags": ["ghcr.io/wojciechem/phperfect-dev:${PHPERFECT_TAG}"],
       "target": "php-dev"
     }
   }
