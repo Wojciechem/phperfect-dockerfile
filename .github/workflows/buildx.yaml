@@ -19,6 +19,6 @@ jobs:
       -
         name: push
         run: |
-#        echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-        docker image ls
-#        docker push ghcr.io/wojciechem/phperfect-dev --all-tags
+#            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            docker image ls
+#            docker push ghcr.io/wojciechem/phperfect-dev --all-tags
