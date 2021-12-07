@@ -50,4 +50,4 @@ jobs:
     steps:
       -
         name: tests
-        run: docker run ghcr.io/wojciechem/phperfect:latest phpunit
+        run: docker run ghcr.io/wojciechem/phperfect:latest vendor/bin/phpunit .
