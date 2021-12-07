@@ -11,6 +11,7 @@
   },
   "target": {
     "app-prod": {
+      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect-dev:latest"],
       "tags": ["ghcr.io/wojciechem/phperfect:${PHPERFECT_TAG}"],
       "target": "php-prod"
     },
