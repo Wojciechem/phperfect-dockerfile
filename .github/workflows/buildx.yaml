@@ -14,8 +14,9 @@ jobs:
         name: checkout
         uses: actions/checkout@v2
       -
-        name: pull latest image
-        run: docker pull ghcr.io/wojciechem/phperfect-dev:latest
+        # why tho
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
       -
         name: build images
         run: docker buildx bake
