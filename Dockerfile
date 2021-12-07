@@ -19,7 +19,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
     --mount=type=cache,target=/var/lib/apt \
     apt update \
     && apt-get --no-install-recommends install -y zip \
-    && install-php-extensions intl opcache pdo pdo_mysql apcu zip \
+    && install-php-extensions intl opcache pdo_mysql apcu zip \
     && usermod -u $USER_ID www-data --shell /bin/bash \
     && groupmod -g $GROUP_ID www-data \
     && chown -R www-data:www-data /app
