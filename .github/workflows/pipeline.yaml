@@ -44,10 +44,6 @@ jobs:
           # using github-specific, experimental feature...
           cache-from: type=gha
           cache-to: type=gha,mode=max
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       -
         name: tests
         run: docker run ghcr.io/wojciechem/phperfect:latest vendor/bin/phpunit .
