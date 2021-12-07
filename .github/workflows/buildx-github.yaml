@@ -28,7 +28,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
+          target: php-dev
           push: true
-          tags: ghcr.io/wojciechem/phperfect-dockerfile:latest
+          tags: ghcr.io/wojciechem/phperfect-dev:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
