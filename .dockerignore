@@ -1,5 +1,9 @@
 # see: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+.git/
+.github/
 .idea/
-*.cache
 vendor/
+*.cache
+.dockerignore
+.gitignore
 README.md
