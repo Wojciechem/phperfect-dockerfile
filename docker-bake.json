@@ -6,19 +6,24 @@
   },
   "group": {
     "default": {
-      "targets": ["app-prod", "app-dev"]
+      "targets": ["dev", "prod", "ci"]
     }
   },
   "target": {
-    "app-prod": {
-      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect-dev:latest"],
+    "dev": {
+      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:dev-latest"],
+      "tags": ["ghcr.io/wojciechem/phperfect:dev-${PHPERFECT_TAG}"],
+      "target": "php-dev"
+    },
+    "prod": {
+      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:latest"],
       "tags": ["ghcr.io/wojciechem/phperfect:${PHPERFECT_TAG}"],
       "target": "php-prod"
     },
-    "app-dev": {
-      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect-dev:latest"],
-      "tags": ["ghcr.io/wojciechem/phperfect-dev:${PHPERFECT_TAG}"],
-      "target": "php-dev"
+    "ci": {
+      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:ci-latest"],
+      "tags": ["ghcr.io/wojciechem/phperfect:ci-${PHPERFECT_TAG}"],
+      "target": "php-ci"
     }
   }
 }
