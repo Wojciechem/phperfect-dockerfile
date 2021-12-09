@@ -2,7 +2,7 @@
 Attempt to create the "perfect" dockerfile for php projects.  
 As always, it is _opinionated_ and may be subject to change.
 
-As it turned out, 90% of the work is making the cache work with GitHub Actions cloud runners 😅
+
 
 ## Work in progress / TODO
 - [x] use build-time cache mount for apt & composer
@@ -10,6 +10,7 @@ As it turned out, 90% of the work is making the cache work with GitHub Actions c
 - [x] try the experimental [github actions cache](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md).
 - [ ] set up something more elaborate on php side (small symfony project?)
 - [x] set up self-hosted runner (with warm cache) for speed comparison
+- [ ] fix composer cache error 😅
 - [ ] code reuse in dockerfile?
   - [ ] decide afterwards - is it worth it?
 

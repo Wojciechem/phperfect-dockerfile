@@ -11,7 +11,7 @@
   },
   "target": {
     "dev": {
-      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:dev-latest"],
+      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:latest"],
       "tags": ["ghcr.io/wojciechem/phperfect:dev-${PHPERFECT_TAG}"],
       "target": "php-dev"
     },

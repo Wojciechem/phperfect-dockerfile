@@ -33,7 +33,7 @@ RUN pecl install xdebug \
 COPY --chown=www-data:www-data composer.* ./
 
 USER www-data:www-data
-RUN --mount=type=cache,id=composer,target=/root/.composer \
+RUN --mount=type=cache,id=composer,target=/var/www/.composer \
     composer install \
     --no-interaction \
     --optimize-autoloader
@@ -43,7 +43,7 @@ FROM php-base as php-prod
 COPY --chown=www-data:www-data composer.* ./
 
 USER www-data:www-data
-RUN --mount=type=cache,id=composer,target=/root/.composer \
+RUN --mount=type=cache,id=composer,target=/var/www/.composer \
     composer install \
     --no-dev \
     --no-interaction \
@@ -53,7 +53,7 @@ COPY --chown=www-data:www-data . ./
 # ----
 FROM php-prod as php-ci
 
-RUN --mount=type=cache,id=composer,target=/root/.composer \
+RUN --mount=type=cache,id=composer,target=/var/www/.composer \
     composer install \
     --no-interaction \
     --optimize-autoloader
