@@ -10,7 +10,7 @@ As always, it is _opinionated_ and may be subject to change.
 - [x] try the experimental [github actions cache](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md).
 - [ ] set up something more elaborate on php side (small symfony project?)
 - [x] set up self-hosted runner (with warm cache) for speed comparison
-- [ ] fix composer cache error 😅
+- [x] fix composer cache error 😅
 - [ ] code reuse in dockerfile?
   - [ ] decide afterwards - is it worth it?
 
