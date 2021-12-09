@@ -33,7 +33,9 @@ jobs:
           # using github-specific, experimental feature...
           cache-from: type=gha
           cache-to: type=gha,mode=max
-        run: docker run ghcr.io/wojciechem/phperfect:latest vendor/bin/phpunit .
+      -
+        name: Tests
+        run: docker run ghcr.io/wojciechem/phperfect:ci-latest vendor/bin/phpunit .
       -
         name: Build and push - prod
         uses: docker/build-push-action@v2
