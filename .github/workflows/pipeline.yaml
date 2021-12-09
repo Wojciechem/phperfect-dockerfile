@@ -7,10 +7,22 @@ on:
     branches:
       - main
 jobs:
+  build-pet:
+    name: Build on "pet" server
+    runs-on: self-hosted
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Build
+        run: docker buildx bake
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      -
+        name: Checkout
         uses: actions/checkout@v2
       -
         name: Set up Docker Buildx
