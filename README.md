@@ -9,7 +9,7 @@ As it turned out, 90% of the work is making the cache work with GitHub Actions c
 - [x] use buildx bake
 - [x] try the experimental [github actions cache](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md).
 - [ ] set up something more elaborate on php side (small symfony project?)
-- [ ] set up self-hosted runner (with warm cache) for speed comparison
+- [x] set up self-hosted runner (with warm cache) for speed comparison
 - [ ] code reuse in dockerfile?
   - [ ] decide afterwards - is it worth it?
 
@@ -24,24 +24,32 @@ plugin for some nice [BuildKit](#buildkit) capabilities.
 docker buildx bake
 ```
 
-### With custom tag:
+### Optionally, with custom tag:
 ```shell
 PHPERFECT_TAG=123 docker buildx bake
 ```
 
-It should build two images, `phperfect-dev` and `phperfect`.
+It should build three `phperfect` images with respective tags:
+- dev-latest
+- latest
+- ci-latest
+
 ## Using the container
 ### Dev
 This is the container that you can use with volume for local development & debugging.  
 Example:
 ```shell
-docker run -v `pwd`:/app phperfect-dev:latest composer install
+docker run -v `pwd`:/app phperfect:dev-latest composer install
 ```
 
 ### Prod, aka "give it to your compliance team first"
 This container will, well, contain, a built, ready-to-serve-requests app with no volumes attached.
 It uses `php-prod` multistage target.  
 Use this target for your-app-specific code.
+
+### CI
+essentially prod + dev dependencies (test frameworks etc.)
+Idea is - you can deploy tens of replicas of CI container to run extensive tests in parallel.
 
 ## Why _x_ was used?
 ### Buildkit
