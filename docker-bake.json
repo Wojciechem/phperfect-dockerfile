@@ -1,7 +1,7 @@
 {
   "variable": {
     "PHPERFECT_TAG": {
-      "default": "buildx-latest"
+      "default": "latest"
     }
   },
   "group": {

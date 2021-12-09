@@ -17,6 +17,9 @@ jobs:
       -
         name: Build
         run: docker buildx bake
+      -
+        name: Tests
+        run: docker run ghcr.io/wojciechem/phperfect:ci-latest vendor/bin/phpunit .
   build:
     name: Build
     runs-on: ubuntu-latest
