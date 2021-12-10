@@ -11,17 +11,14 @@
   },
   "target": {
     "dev": {
-      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:latest"],
       "tags": ["ghcr.io/wojciechem/phperfect:dev-${PHPERFECT_TAG}"],
       "target": "php-dev"
     },
     "prod": {
-      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:latest"],
       "tags": ["ghcr.io/wojciechem/phperfect:${PHPERFECT_TAG}"],
       "target": "php-prod"
     },
     "ci": {
-      "cache-from": ["type=registry,ref=ghcr.io/wojciechem/phperfect:ci-latest"],
       "tags": ["ghcr.io/wojciechem/phperfect:ci-${PHPERFECT_TAG}"],
       "target": "php-ci"
     }
